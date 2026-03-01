@@ -1,7 +1,37 @@
 
 
 import './App.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+function Countdown() {
+  const targetDate = new Date('2026-03-08T00:00:00');
+  const [timeLeft, setTimeLeft] = useState({days: 0, hours: 0, minutes: 0, seconds: 0});
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        setTimeLeft({days, hours, minutes, seconds});
+      } else {
+        setTimeLeft({days: 0, hours: 0, minutes: 0, seconds: 0});
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="countdown-container">
+      <span className="countdown-title">Contagem regressiva para o grande dia:</span>
+      <div className="countdown-numbers">
+        <span>{timeLeft.days}d</span> : <span>{timeLeft.hours}h</span> : <span>{timeLeft.minutes}m</span> : <span>{timeLeft.seconds}s</span>
+      </div>
+    </div>
+  );
+}
 
 const fotos = [
   { src: '/fotos/foto1.jpg', alt: 'Júlia Maria e filhos', legenda: 'Júlia Maria e seus filhos reunidos' },
@@ -38,6 +68,7 @@ function App() {
   const [showYoutube, setShowYoutube] = useState(false);
   return (
     <div className="homenagem-container">
+      <Countdown />
       <div className="player-musica">
         <button className="btn-musica" onClick={() => setShowYoutube(!showYoutube)}>
           {showYoutube ? 'Pausar Louvor' : 'Tocar Louvor'}
