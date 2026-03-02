@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from 'react';
 function Countdown() {
   const targetDate = new Date('2026-03-08T00:00:00');
   const [timeLeft, setTimeLeft] = useState({days: 0, hours: 0, minutes: 0, seconds: 0});
+  const [highlight, setHighlight] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -20,14 +21,27 @@ function Countdown() {
         setTimeLeft({days: 0, hours: 0, minutes: 0, seconds: 0});
       }
     }, 1000);
+    // Animação de destaque
+    setHighlight(true);
+    setTimeout(() => setHighlight(false), 1200);
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    setHighlight(true);
+    const timeout = setTimeout(() => setHighlight(false), 800);
+    return () => clearTimeout(timeout);
+  }, [timeLeft]);
+
   return (
-    <div className="countdown-container">
-      <span className="countdown-title">Contagem regressiva para o grande dia:</span>
+    <div className={`countdown-container destaque ${highlight ? 'pulse' : ''}`}>
+      <span className="countdown-emoji">🎉</span>
+      <span className="countdown-title">Faltam apenas <span className="countdown-days">{timeLeft.days} dias</span> para o aniversário de Júlia Maria!</span>
       <div className="countdown-numbers">
-        <span>{timeLeft.days}d</span> : <span>{timeLeft.hours}h</span> : <span>{timeLeft.minutes}m</span> : <span>{timeLeft.seconds}s</span>
+        <span>{timeLeft.days.toString().padStart(2, '0')}</span> : <span>{timeLeft.hours.toString().padStart(2, '0')}</span> : <span>{timeLeft.minutes.toString().padStart(2, '0')}</span> : <span>{timeLeft.seconds.toString().padStart(2, '0')}</span>
+      </div>
+      <div className="countdown-labels">
+        <span>Dias</span> <span>Horas</span> <span>Min</span> <span>Seg</span>
       </div>
     </div>
   );
