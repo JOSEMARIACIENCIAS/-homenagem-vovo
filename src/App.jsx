@@ -22,51 +22,7 @@ function FundoParticulasQuimicas() {
         <line x1="20" y1="30" x2="30" y2="45" stroke="#ffe0b2" strokeWidth="3" />
         <line x1="40" y1="30" x2="30" y2="45" stroke="#ffe0b2" strokeWidth="3" />
       </svg>
-    </div>
-  );
-}
 
-function App() {
-  const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const handlePlayPause = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-  const [showYoutube, setShowYoutube] = useState(false);
-  return (
-    <div className="homenagem-container">
-      <FundoParticulasQuimicas />
-      <Countdown />
-      <div className="player-musica">
-        <button className="btn-musica" onClick={() => setShowYoutube(!showYoutube)}>
-          {showYoutube ? 'Pausar Louvor' : 'Tocar Louvor'}
-        </button>
-        {showYoutube && (
-          <div className="youtube-audio-player">
-            <iframe width="1" height="1" style={{minWidth:'1px',minHeight:'1px',opacity:0.01}} src="https://www.youtube.com/embed/rxN3q1iFVAY?autoplay=1" title="Louvor" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
-            <div className="audio-instrucao">(O áudio será reproduzido. Para pausar, clique novamente no botão acima.)</div>
-          </div>
-        )}
-      </div>
-      <header>
-        <div className="foto-capa-container">
-          <img src="/fotos/foto4.jpg" alt="Júlia Maria" className="foto-capa" />
-        </div>
-        <h1>Feliz 84 anos, Júlia Maria!</h1>
-        <p className="mensagem">
-          Hoje celebramos a vida de uma mulher extraordinária, que é o verdadeiro elemento essencial da nossa família. Júlia Maria, sua força, carinho e sabedoria são a base de tudo que somos. Que este dia seja repleto de amor, alegria e gratidão por tudo que você representa!
-        </p>
-      </header>
-      ...existing code...
-      <footer>
-        <p>Com todo amor dos seus filhos e família 💖</p>
-      </footer>
     </div>
   );
 }
