@@ -24,6 +24,7 @@ function FundoParticulasQuimicas() {
       </svg>
 
 
+
     </div>
   );
 }
