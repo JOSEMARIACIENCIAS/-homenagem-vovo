@@ -1,50 +1,75 @@
 
 
-import './App.css';
-import { useState, useRef, useEffect } from 'react';
-import Confetti from 'react-confetti';
-import { Fireworks } from 'fireworks-js/dist/react';
-function Countdown() {
-  const targetDate = new Date('2026-03-08T00:00:00');
-  const [timeLeft, setTimeLeft] = useState({days: 0, hours: 0, minutes: 0, seconds: 0});
-  const [highlight, setHighlight] = useState(false);
-  const [showFireworks, setShowFireworks] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
-  const [phrase, setPhrase] = useState('');
-  const phrases = [
-    'Cada dia é um presente! 💝',
-    'Você é inspiração para todos nós!',
-    'Família é o maior tesouro.',
-    'Sorria, o grande dia está chegando!',
-    'A vida é feita de momentos especiais.',
-    'Gratidão por cada história vivida.',
-    'Seu amor nos une sempre!',
-    'Hoje é um novo capítulo de alegria!'
-  ];
-  // Avatar SVG simples
-  const avatar = (
-    <svg width="60" height="60" viewBox="0 0 60 60" className="avatar-animado">
-      <circle cx="30" cy="30" r="28" fill="#f7e9ff" stroke="#a97ff7" strokeWidth="2" />
-      <ellipse cx="30" cy="32" rx="14" ry="16" fill="#ffe0b2" />
-      <ellipse cx="30" cy="38" rx="10" ry="7" fill="#fff" />
-      <ellipse cx="24" cy="30" rx="2.5" ry="3" fill="#7a3a8a" />
-      <ellipse cx="36" cy="30" rx="2.5" ry="3" fill="#7a3a8a" />
-      <path d="M25 42 Q30 46 35 42" stroke="#a97ff7" strokeWidth="2" fill="none" />
-    </svg>
+function FundoParticulasQuimicas() {
+  return (
+    <div className="fundo-particulas">
+      {/* Átomo animado */}
+      <svg className="atomo-svg atomo1" width="60" height="60" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#a97ff7" strokeWidth="2"/>
+        <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#e67e22" strokeWidth="2"/>
+        <circle cx="30" cy="30" r="6" fill="#ffe0b2" stroke="#7a3a8a" strokeWidth="2"/>
+        <circle cx="54" cy="30" r="3" fill="#a97ff7" />
+        <circle cx="30" cy="6" r="3" fill="#e67e22" />
+        <circle cx="6" cy="30" r="3" fill="#7a3a8a" />
+        <circle cx="30" cy="54" r="3" fill="#a97ff7" />
+      </svg>
+      {/* Molécula animada */}
+      <svg className="atomo-svg atomo2" width="60" height="60" viewBox="0 0 60 60">
+        <circle cx="20" cy="30" r="8" fill="#e67e22" opacity="0.7" />
+        <circle cx="40" cy="30" r="8" fill="#a97ff7" opacity="0.7" />
+        <circle cx="30" cy="45" r="6" fill="#7a3a8a" opacity="0.7" />
+        <line x1="20" y1="30" x2="40" y2="30" stroke="#ffe0b2" strokeWidth="3" />
+        <line x1="20" y1="30" x2="30" y2="45" stroke="#ffe0b2" strokeWidth="3" />
+        <line x1="40" y1="30" x2="30" y2="45" stroke="#ffe0b2" strokeWidth="3" />
+      </svg>
+    </div>
   );
+}
 
-  // Mensagem personalizada
-  function getCustomMessage() {
-    if (timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0) {
-      return 'Hoje é o grande dia! Parabéns Júlia Maria!';
-    } else if (timeLeft.days === 0 && timeLeft.hours < 24) {
-      return 'É amanhã! Prepare o coração!';
-    } else if (timeLeft.days <= 3) {
-      return 'Faltam poucos dias para celebrar!';
+function App() {
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const handlePlayPause = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
     } else {
-      return `Faltam apenas ${timeLeft.days} dias para o aniversário de Júlia Maria!`;
+      audioRef.current.play();
     }
-  }
+    setIsPlaying(!isPlaying);
+  };
+  const [showYoutube, setShowYoutube] = useState(false);
+  return (
+    <div className="homenagem-container">
+      <FundoParticulasQuimicas />
+      <Countdown />
+      <div className="player-musica">
+        <button className="btn-musica" onClick={() => setShowYoutube(!showYoutube)}>
+          {showYoutube ? 'Pausar Louvor' : 'Tocar Louvor'}
+        </button>
+        {showYoutube && (
+          <div className="youtube-audio-player">
+            <iframe width="1" height="1" style={{minWidth:'1px',minHeight:'1px',opacity:0.01}} src="https://www.youtube.com/embed/rxN3q1iFVAY?autoplay=1" title="Louvor" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+            <div className="audio-instrucao">(O áudio será reproduzido. Para pausar, clique novamente no botão acima.)</div>
+          </div>
+        )}
+      </div>
+      <header>
+        <div className="foto-capa-container">
+          <img src="/fotos/foto4.jpg" alt="Júlia Maria" className="foto-capa" />
+        </div>
+        <h1>Feliz 84 anos, Júlia Maria!</h1>
+        <p className="mensagem">
+          Hoje celebramos a vida de uma mulher extraordinária, que é o verdadeiro elemento essencial da nossa família. Júlia Maria, sua força, carinho e sabedoria são a base de tudo que somos. Que este dia seja repleto de amor, alegria e gratidão por tudo que você representa!
+        </p>
+      </header>
+      ...existing code...
+      <footer>
+        <p>Com todo amor dos seus filhos e família 💖</p>
+      </footer>
+    </div>
+  );
+}
 
   // Efeito partículas químicas (bolhas animadas)
   function ParticulasQuimicas() {

@@ -1,3 +1,30 @@
+.fundo-particulas {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.atomo-svg {
+  position: absolute;
+  opacity: 0.18;
+  animation: atomo-flutua 18s infinite linear alternate;
+}
+.atomo1 {
+  left: 10vw; top: 18vh;
+  width: 80px; height: 80px;
+  animation-delay: 0s;
+}
+.atomo2 {
+  right: 12vw; bottom: 14vh;
+  width: 70px; height: 70px;
+  animation-delay: 7s;
+}
+@keyframes atomo-flutua {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-30px) scale(1.08) rotate(10deg); }
+  100% { transform: translateY(0) scale(1) rotate(-10deg); }
+}
 .particulas-quimicas {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
