@@ -111,7 +111,6 @@ function FundoParticulasQuimicas() {
         }
       }}>Compartilhar contagem</button>
     </div>
-
   );
 }
 
