@@ -41,10 +41,13 @@ function FundoParticulasQuimicas() {
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date();
+      // Zera horas/minutos/segundos para comparar só as datas
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const target = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+      const diffDays = Math.round((target - today) / (1000 * 60 * 60 * 24));
       const diff = targetDate - now;
       if (diff > 0) {
-        // Corrigido: dias arredondado para cima
-        const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        const days = diffDays;
         const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((diff / (1000 * 60)) % 60);
         const seconds = Math.floor((diff / 1000) % 60);
