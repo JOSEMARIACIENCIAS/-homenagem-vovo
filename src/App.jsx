@@ -54,13 +54,30 @@ function App() {
   const [showYoutube, setShowYoutube] = useState(false);
   return (
     <div className="homenagem-container" style={{maxWidth:600, margin:'0 auto', background:'#fff', borderRadius:16, boxShadow:'0 2px 16px #0002', padding:24}}>
-      <FundoParticulasQuimicas />
-      <Countdown />
-      <header style={{textAlign:'center'}}>
+      <header className="header-animado">
+        <div className="particulas-quimicas">
+          <svg className="atomo-svg atomo1" width="80" height="80" viewBox="0 0 60 60">
+            <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#a97ff7" strokeWidth="2"/>
+            <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#e67e22" strokeWidth="2"/>
+            <circle cx="30" cy="30" r="6" fill="#ffe0b2" stroke="#7a3a8a" strokeWidth="2"/>
+            <circle cx="54" cy="30" r="3" fill="#a97ff7" />
+            <circle cx="30" cy="6" r="3" fill="#e67e22" />
+            <circle cx="6" cy="30" r="3" fill="#7a3a8a" />
+            <circle cx="30" cy="54" r="3" fill="#a97ff7" />
+          </svg>
+          <svg className="atomo-svg atomo2" width="60" height="60" viewBox="0 0 60 60">
+            <circle cx="20" cy="30" r="8" fill="#e67e22" opacity="0.7" />
+            <circle cx="40" cy="30" r="8" fill="#a97ff7" opacity="0.7" />
+            <circle cx="30" cy="45" r="6" fill="#7a3a8a" opacity="0.7" />
+            <line x1="20" y1="30" x2="40" y2="30" stroke="#ffe0b2" strokeWidth="3" />
+            <line x1="20" y1="30" x2="30" y2="45" stroke="#ffe0b2" strokeWidth="3" />
+            <line x1="40" y1="30" x2="30" y2="45" stroke="#ffe0b2" strokeWidth="3" />
+          </svg>
+        </div>
         <div className="foto-capa-container" style={{marginBottom:16}}>
           <img src="/fotos/foto4.jpg" alt="Júlia Maria" className="foto-capa" style={{width:180, borderRadius:'50%', border:'4px solid #a97ff7', boxShadow:'0 2px 8px #0003'}} />
         </div>
-        <h1 style={{fontFamily:'serif', color:'#7a3a8a'}}>Feliz 84 anos, Júlia Maria!</h1>
+        <h1 className="titulo-homenagem">Feliz 84 anos, <span className="nome-destaque">Júlia Maria!</span></h1>
         <p className="mensagem" style={{fontSize:'1.1rem', color:'#444', margin:'16px 0 0 0'}}>
           Hoje celebramos a vida de uma mulher extraordinária, que é o verdadeiro elemento essencial da nossa família.<br/>
           Júlia Maria, sua força, carinho e sabedoria são a base de tudo que somos.<br/>

@@ -66,3 +66,64 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Cabeçalho animado e partículas químicas */
+.header-animado {
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  background: linear-gradient(120deg, #f3e9ff 0%, #e0e7ff 100%);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+.particulas-quimicas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  z-index: 1;
+}
+.atomo-svg {
+  position: absolute;
+  animation: girarAtomo 8s linear infinite;
+  opacity: 0.7;
+}
+.atomo1 {
+  left: 10%;
+  top: 10px;
+  animation-duration: 10s;
+}
+.atomo2 {
+  right: 10%;
+  top: 30px;
+  animation-duration: 14s;
+}
+@keyframes girarAtomo {
+  0% { transform: rotate(0deg) scale(1); }
+  100% { transform: rotate(360deg) scale(1.1); }
+}
+.titulo-homenagem {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3em;
+  color: #7a3a8a;
+  margin-bottom: 0.2em;
+  z-index: 2;
+  position: relative;
+}
+.nome-destaque {
+  color: #e67e22;
+  font-weight: bold;
+  text-shadow: 0 2px 8px #fff7, 0 1px 0 #a97ff7;
+  letter-spacing: 1px;
+  font-size: 1.1em;
+}
+.foto-capa-container {
+  z-index: 2;
+  position: relative;
+}
+@media (max-width: 600px) {
+  .titulo-homenagem { font-size: 1.3em; }
+  .foto-capa-container img { width: 120px !important; }
+}
