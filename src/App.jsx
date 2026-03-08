@@ -12,6 +12,7 @@ import {
   FaBirthdayCake,
   FaStar,
 } from "react-icons/fa";
+import { Analytics } from "@vercel/analytics/react";
 
 function Confetti() {
   const confettiPieces = Array.from({ length: 50 }, (_, i) => ({
@@ -393,6 +394,7 @@ function App() {
           </button>
         </div>)}
       <div className="countdown-labels" style={{fontSize:'0.9rem', color:'#888'}}>Dias Horas Min Seg</div>
+      <Analytics />
     </div>
   );
 }
