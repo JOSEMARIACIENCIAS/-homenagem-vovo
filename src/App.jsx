@@ -158,6 +158,36 @@ function App() {
   const [showYoutube, setShowYoutube] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
+  // Fotos novas
+  const fotosNovas = [
+    {
+      src: "/fotos_novas/foto1.jpeg",
+      alt: "Foto nova 1",
+      legenda: "Novo momento especial 1",
+    },
+    {
+      src: "/fotos_novas/foto2.jpeg",
+      alt: "Foto nova 2",
+      legenda: "Novo momento especial 2",
+    },
+    {
+      src: "/fotos_novas/foto3.jpeg",
+      alt: "Foto nova 3",
+      legenda: "Novo momento especial 3",
+    },
+    {
+      src: "/fotos_novas/foto4.jpeg",
+      alt: "Foto nova 4",
+      legenda: "Novo momento especial 4",
+    },
+    {
+      src: "/fotos_novas/foto5.jpeg",
+      alt: "Foto nova 5",
+      legenda: "Novo momento especial 5",
+    },
+  ];
+
+  // Fotos antigas
   const fotos = [
     {
       src: "/fotos/foto1.jpg",
@@ -370,6 +400,20 @@ function App() {
           </span>
         </div>
       </section>
+      {/* Seção de fotos novas */}
+      <section className="galeria-fotos-novas">
+        <h2 style={{ color: '#b30059' }}>Fotos Recentes</h2>
+        <div className="fotos-lista">
+          {fotosNovas.map((foto, index) => (
+            <div className="foto-item" key={"nova-" + index}>
+              <img src={foto.src} alt={foto.alt} />
+              <div className="legenda">{foto.legenda} <span style={{color:'#b30059', fontWeight:'bold', fontSize:'0.95em', marginLeft:'0.5em'}}>Novo</span></div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Seção de fotos antigas */}
       <section className="galeria-fotos">
         <h2>Momentos em Família</h2>
         <div className="fotos-lista">
