@@ -343,6 +343,16 @@ function App() {
             Seu navegador não suporta o vídeo.
           </video>
 
+  <video width="320" height="240" controls>
+            <source src="/videos/video11.mp4" type="video/mp4" />
+            Seu navegador não suporta o vídeo.
+          </video>
+
+  <video width="320" height="240" controls>
+            <source src="/videos/video12.mp4" type="video/mp4" />
+            Seu navegador não suporta o vídeo.
+          </video>
+
         </div>
       </section>
 
