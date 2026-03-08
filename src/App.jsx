@@ -296,7 +296,10 @@ function App() {
             <source src="/videos/video9.mp4" type="video/mp4" />
             Seu navegador não suporta o vídeo.
           </video>
-          
+                    <video width="320" height="240" controls>
+            <source src="/videos/video10.mp4" type="video/mp4" />
+            Seu navegador não suporta o vídeo.
+          </video>
 
         </div>
       </section>
