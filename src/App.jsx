@@ -252,6 +252,31 @@ function App() {
         </div>
         <h1>O Altar da Vida: Julia Maria, Nossa Raiz de Oitenta e Quatro Anos</h1>
       </header>
+      {/* Seção de vídeos dos netos e bisnetos */}
+      <section style={{ margin: '2rem 0' }}>
+        <h2 style={{ textAlign: 'center', color: '#4B0082' }}>Mensagens dos Netos e Bisnetos</h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
+          <video width="320" height="240" controls>
+            <source src="/videos/video1.mp4" type="video/mp4" />
+            Seu navegador não suporta o vídeo.
+          </video>
+          <video width="320" height="240" controls>
+            <source src="/videos/video2.mp4" type="video/mp4" />
+            Seu navegador não suporta o vídeo.
+          </video>
+          <video width="320" height="240" controls>
+            <source src="/videos/video3.mp4" type="video/mp4" />
+            Seu navegador não suporta o vídeo.
+          </video>
+        </div>
+      </section>
+
+      <header>
+        <div className="foto-capa-container">
+          <img src="/fotos/foto4.jpg" alt="Júlia Maria" className="foto-capa" />
+        </div>
+        <h1>O Altar da Vida: Julia Maria, Nossa Raiz de Oitenta e Quatro Anos</h1>
+      </header>
       <section className="versos-homenagem">
         <div className="versos">
           <p>
