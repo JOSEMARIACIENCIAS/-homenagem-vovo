@@ -157,6 +157,7 @@ function Countdown() {
 function App() {
   const [showYoutube, setShowYoutube] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [selectedNovaIndex, setSelectedNovaIndex] = useState(null);
 
   // Fotos novas
   const fotosNovas = [
@@ -228,20 +229,34 @@ function App() {
     },
   ];
 
+  // Lightbox para fotos antigas
   const openLightbox = (index) => {
     setSelectedImageIndex(index);
+  };
+  // Lightbox para fotos novas
+  const openNovaLightbox = (index) => {
+    setSelectedNovaIndex(index);
   };
 
   const closeLightbox = () => {
     setSelectedImageIndex(null);
   };
+  const closeNovaLightbox = () => {
+    setSelectedNovaIndex(null);
+  };
 
   const nextImage = () => {
     setSelectedImageIndex((prev) => (prev + 1) % fotos.length);
   };
-
   const prevImage = () => {
     setSelectedImageIndex((prev) => (prev - 1 + fotos.length) % fotos.length);
+  };
+  // Navegação para fotos novas
+  const nextNovaImage = () => {
+    setSelectedNovaIndex((prev) => (prev + 1) % fotosNovas.length);
+  };
+  const prevNovaImage = () => {
+    setSelectedNovaIndex((prev) => (prev - 1 + fotosNovas.length) % fotosNovas.length);
   };
 
   useEffect(() => {
@@ -251,10 +266,15 @@ function App() {
         if (e.key === "ArrowRight") nextImage();
         if (e.key === "ArrowLeft") prevImage();
       }
+      if (selectedNovaIndex !== null) {
+        if (e.key === "Escape") closeNovaLightbox();
+        if (e.key === "ArrowRight") nextNovaImage();
+        if (e.key === "ArrowLeft") prevNovaImage();
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedImageIndex]);
+  }, [selectedImageIndex, selectedNovaIndex]);
 
   return (
     <div className="homenagem-container">
@@ -427,12 +447,56 @@ function App() {
         <h2 style={{ color: '#b30059' }}>Fotos Recentes</h2>
         <div className="fotos-lista">
           {fotosNovas.map((foto, index) => (
-            <div className="foto-item" key={"nova-" + index}>
+            <div className="foto-item" key={"nova-" + index} onClick={() => openNovaLightbox(index)} style={{cursor:'pointer'}}>
               <img src={foto.src} alt={foto.alt} />
               <div className="legenda">{foto.legenda} <span style={{color:'#b30059', fontWeight:'bold', fontSize:'0.95em', marginLeft:'0.5em'}}>Novo</span></div>
             </div>
           ))}
         </div>
+        {/* Lightbox/apresentação para fotos novas */}
+        {selectedNovaIndex !== null && (
+          <div className="lightbox" onClick={closeNovaLightbox} style={{animation:'fadeIn 0.4s'}}>
+            <button className="lightbox-close" onClick={closeNovaLightbox}>
+              <FaTimes />
+            </button>
+            <button
+              className="lightbox-prev"
+              onClick={(e) => {
+                e.stopPropagation();
+                prevNovaImage();
+              }}
+            >
+              <FaChevronLeft />
+            </button>
+            <div
+              className="lightbox-content"
+              onClick={(e) => e.stopPropagation()}
+              style={{transition:'all 0.4s'}}
+            >
+              <img
+                key={selectedNovaIndex}
+                src={fotosNovas[selectedNovaIndex].src}
+                alt={fotosNovas[selectedNovaIndex].alt}
+                style={{maxHeight:'70vh', maxWidth:'90vw', borderRadius:'12px', boxShadow:'0 4px 24px rgba(179,0,89,0.13)'}}
+              />
+              <div className="lightbox-legenda">
+                {fotosNovas[selectedNovaIndex].legenda}
+              </div>
+              <div className="lightbox-counter">
+                {selectedNovaIndex + 1} / {fotosNovas.length}
+              </div>
+            </div>
+            <button
+              className="lightbox-next"
+              onClick={(e) => {
+                e.stopPropagation();
+                nextNovaImage();
+              }}
+            >
+              <FaChevronRight />
+            </button>
+          </div>
+        )}
       </section>
 
       {/* Seção de fotos antigas */}
