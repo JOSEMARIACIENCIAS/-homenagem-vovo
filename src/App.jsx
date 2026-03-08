@@ -250,84 +250,52 @@ function App() {
         <div className="foto-capa-container">
           <img src="/fotos/foto4.jpg" alt="Júlia Maria" className="foto-capa" />
         </div>
-        <h1>Feliz 84 anos, Júlia Maria!</h1>
-        <p className="mensagem">
-          Hoje celebramos a vida de uma mulher extraordinária, que é o
-          verdadeiro elemento essencial da nossa família. Júlia Maria, sua
-          força, carinho e sabedoria são a base de tudo que somos. Que este dia
-          seja repleto de amor, alegria e gratidão por tudo que você representa!
-        </p>
+        <h1>O Altar da Vida: Julia Maria, Nossa Raiz de Oitenta e Quatro Anos</h1>
       </header>
       <section className="versos-homenagem">
-        <h2>Mulher Guerreira, Esteio da Família Vieira</h2>
         <div className="versos">
           <p>
-            No dia da mulher nasceu uma estrela,
-            <br />
-            Júlia Maria, guerreira, força tão bela.
-            <br />
-            Em cada ruga, uma história de amor,
-            <br />
-            Em cada olhar, esperança e calor.
+            Escutem bem este nome que o vento carrega,<br/>
+            Julia Maria, a força que não se entrega.<br/>
+            Olhem para essas mãos, marcadas pelo tempo,<br/>
+            Calejadas de vida, de luto e de vento.<br/>
+            Mãos que embalaram o choro, que limparam o chão,<br/>
+            Mãos que multiplicaram o pouco em muito pão.
           </p>
           <p>
-            Esteio da família Vieira, raiz e flor,
-            <br />
-            Com mãos de ternura, construiu o lar,
-            <br />
-            Com coragem e fé, ensinou a lutar,
-            <br />E com seu abraço, nos faz sempre sonhar.
+            Vovó, hoje o silêncio fala mais que a folia,<br/>
+            Pois em cada canto do Brasil, há uma nostalgia.<br/>
+            Lá nas terras de Minas, entre serras e neblina,<br/>
+            Tem neto chorando, sentindo a sua luz divina.<br/>
+            Tem neto distante, com o peito apertado,<br/>
+            Querendo ser o ar para estar ao seu lado.
           </p>
           <p>
-            Mulher de fibra, exemplo e luz,
-            <br />
-            Que a vida inteira carrega a cruz,
-            <br />
-            Mas nunca perde o brilho no olhar,
-            <br />E faz da simplicidade seu jeito de amar.
+            Eu mesmo, daqui, sinto o nó na garganta,<br/>
+            Pois o amor que sinto por ti é o que me levanta.<br/>
+            Dói não poder tocar sua pele cansada,<br/>
+            Dói não ser o seu guia nesta caminhada.<br/>
+            Mas saiba, guerreira de oitenta e quatro janeiros,<br/>
+            Que seus netos e bisnetos são seus herdeiros.<br/>
+            Não de ouro ou de bens, mas de fibra e de cor,<br/>
+            Herdeiros do seu rastro infinito de amor.
           </p>
           <p>
-            Hoje celebramos seus 84 anos de vida,
-            <br />
-            Com gratidão, alegria e emoção sentida.
-            <br />
-            Júlia Maria, orgulho e inspiração,
-            <br />
-            Nosso alicerce, nossa maior razão.
+            A senhora é o tronco que o tempo não verga,<br/>
+            A luz que a família, no escuro, enxerga.<br/>
+            Filhos, netos e bisnetos... veja a multidão!<br/>
+            Todos batendo no ritmo do seu coração.<br/>
+            Aqueles que não vieram, estão aí no seu colo,<br/>
+            Nas lágrimas que caem e molham este solo.
           </p>
-        </div>
-      </section>
-      <section className="elementos-quimicos">
-        <h2>Elementos da Vida de Júlia</h2>
-        <div className="elementos-lista">
-          <div className="elemento-quimico">
-            <div className="simbolo">Amor</div>
-            <br />
-            <div className="descricao">
-              Amor incondicional que une toda a família.
-            </div>
-          </div>
-          <div className="elemento-quimico">
-            <div className="simbolo">Sabedoria</div>
-            <br />
-            <div className="descricao">
-              Conselhos e histórias que inspiram gerações.
-            </div>
-          </div>
-          <div className="elemento-quimico">
-            <div className="simbolo">Força</div>
-            <br />
-            <div className="descricao">
-              Resiliência diante dos desafios da vida.
-            </div>
-          </div>
-          <div className="elemento-quimico">
-            <div className="simbolo">Alegria</div>
-            <br />
-            <div className="descricao">
-              Sorrisos e momentos felizes compartilhados.
-            </div>
-          </div>
+          <p>
+            Choramos, sim, mas de gratidão profunda,<br/>
+            Por ter a senhora nesta terra fecunda.<br/>
+            Que Deus te sustente, nossa amada Maria,<br/>
+            Pois sem o seu brilho, não haveria o dia.<br/>
+            Sinta o abraço de quem está longe e de quem está perto,<br/>
+            Pois o seu amor, vovó, é o nosso único porto certo.
+          </p>
         </div>
       </section>
       <section className="galeria-fotos">
@@ -385,80 +353,9 @@ function App() {
           >
             <FaChevronRight />
           </button>
-        </div>
-      )}
-<<<<<<< HEAD
+        </div>)}
       <div className="countdown-labels" style={{fontSize:'0.9rem', color:'#888'}}>Dias Horas Min Seg</div>
     </div>
   );
 }
-
-function App() {
-  const [showYoutube, setShowYoutube] = useState(false);
-  return (
-    <div className="homenagem-container" style={{maxWidth:600, margin:'0 auto', background:'#fff', borderRadius:16, boxShadow:'0 2px 16px #0002', padding:24}}>
-      <header className="header-animado">
-        <div className="particulas-quimicas">
-          <svg className="atomo-svg atomo1" width="80" height="80" viewBox="0 0 60 60">
-            <ellipse cx="30" cy="30" rx="24" ry="10" fill="none" stroke="#a97ff7" strokeWidth="2"/>
-            <ellipse cx="30" cy="30" rx="10" ry="24" fill="none" stroke="#e67e22" strokeWidth="2"/>
-            <circle cx="30" cy="30" r="6" fill="#ffe0b2" stroke="#7a3a8a" strokeWidth="2"/>
-            <circle cx="54" cy="30" r="3" fill="#a97ff7" />
-            <circle cx="30" cy="6" r="3" fill="#e67e22" />
-            <circle cx="6" cy="30" r="3" fill="#7a3a8a" />
-            <circle cx="30" cy="54" r="3" fill="#a97ff7" />
-          </svg>
-          <svg className="atomo-svg atomo2" width="60" height="60" viewBox="0 0 60 60">
-            <circle cx="20" cy="30" r="8" fill="#e67e22" opacity="0.7" />
-            <circle cx="40" cy="30" r="8" fill="#a97ff7" opacity="0.7" />
-            <circle cx="30" cy="45" r="6" fill="#7a3a8a" opacity="0.7" />
-            <line x1="20" y1="30" x2="40" y2="30" stroke="#ffe0b2" strokeWidth="3" />
-            <line x1="20" y1="30" x2="30" y2="45" stroke="#ffe0b2" strokeWidth="3" />
-            <line x1="40" y1="30" x2="30" y2="45" stroke="#ffe0b2" strokeWidth="3" />
-          </svg>
-        </div>
-        <div className="foto-capa-container" style={{marginBottom:16}}>
-          <img src="/fotos/foto4.jpg" alt="Júlia Maria" className="foto-capa" style={{width:180, borderRadius:'50%', border:'4px solid #a97ff7', boxShadow:'0 2px 8px #0003'}} />
-        </div>
-        <h1 className="titulo-homenagem">Feliz 84 anos, <span className="nome-destaque">Júlia Maria!</span></h1>
-        <p className="mensagem" style={{fontSize:'1.1rem', color:'#444', margin:'16px 0 0 0'}}>
-          Hoje celebramos a vida de uma mulher extraordinária, que é o verdadeiro elemento essencial da nossa família.<br/>
-          Júlia Maria, sua força, carinho e sabedoria são a base de tudo que somos.<br/>
-          Que este dia seja repleto de amor, alegria e gratidão por tudo que você representa!
-        </p>
-      </header>
-      <div className="player-musica" style={{textAlign:'center', margin:'24px 0'}}>
-        <button className="btn-musica" style={{padding:'10px 24px', borderRadius:8, background:'#a97ff7', color:'#fff', border:'none', fontWeight:'bold', fontSize:'1rem', cursor:'pointer', marginBottom:8}} onClick={() => setShowYoutube(!showYoutube)}>
-          {showYoutube ? 'Pausar Louvor' : 'Tocar Louvor'}
-        </button>
-        {showYoutube && (
-          <div className="youtube-audio-player">
-            <iframe width="1" height="1" style={{minWidth:'1px',minHeight:'1px',opacity:0.01}} src="https://www.youtube.com/embed/rxN3q1iFVAY?autoplay=1" title="Louvor" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
-            <div className="audio-instrucao" style={{fontSize:'0.9rem', color:'#888'}}>(O áudio será reproduzido. Para pausar, clique novamente no botão acima.)</div>
-=======
-      <section className="depoimentos fade-in">
-        <h2>Depoimentos dos Filhos</h2>
-        <div className="depoimentos-lista">
-          <div className="depoimento-item">
-            <p>"Mãe, você é nossa inspiração diária. Obrigado por tudo!"</p>
-            <span>— Com carinho, seus filhos</span>
->>>>>>> ca29d2edd59223ff37fd402c148ba4296f958d1c
-          </div>
-        </div>
-      </section>
-      <div className="compartilhar fade-in">
-        <button>
-          <FaShareAlt /> Compartilhar com a família
-        </button>
-      </div>
-      <footer>
-        <p>
-          Com todo amor dos seus filhos e família{" "}
-          <FaHeart className="heart-icon" />
-        </p>
-      </footer>
-    </div>
-  );
-}
-
 export default App;
