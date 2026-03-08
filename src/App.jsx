@@ -297,6 +297,7 @@ function App() {
         <h1>O Altar da Vida: Julia Maria, Nossa Raiz de Oitenta e Quatro Anos</h1>
       </header>
       <section className="versos-homenagem">
+        <h2 style={{ textAlign: 'center', color: '#7a3a8a', marginBottom: '1em' }}>Poesia em Homenagem</h2>
         <div className="versos">
           <p>
             Escutem bem este nome que o vento carrega,<br/>
@@ -340,6 +341,19 @@ function App() {
             Sinta o abraço de quem está longe e de quem está perto,<br/>
             Pois o seu amor, vovó, é o nosso único porto certo.
           </p>
+        </div>
+        <div style={{ textAlign: 'right', marginTop: '1.5em', fontStyle: 'italic', color: '#7a3a8a', fontSize: '1.05em' }}>
+          <span style={{
+            color: '#b30059',
+            fontWeight: 'bold',
+            fontSize: '1.35em',
+            background: 'linear-gradient(90deg, #ffe0f7 0%, #fff 100%)',
+            padding: '0.2em 0.7em',
+            borderRadius: '8px',
+            boxShadow: '0 2px 8px rgba(179,0,89,0.08)'
+          }}>
+            — Autor: José Maria (neto)
+          </span>
         </div>
       </section>
       <section className="galeria-fotos">

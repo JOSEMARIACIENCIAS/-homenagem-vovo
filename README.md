@@ -1,3 +1,8 @@
+
+# Homenagem à Júlia Maria
+
+Este projeto contém uma poesia original em homenagem à Júlia Maria, escrita por José Maria (neto).
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
