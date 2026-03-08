@@ -185,6 +185,18 @@ function App() {
       alt: "Foto nova 5",
       legenda: "Novo momento especial 5",
     },
+{
+      src: "/fotos_novas/foto6.jpeg",
+      alt: "Foto nova 6",
+      legenda: "Novo momento especial 6",
+    },
+{
+      src: "/fotos_novas/foto7.jpeg",
+      alt: "Foto nova 7",
+      legenda: "Novo momento especial 7",
+    },
+
+
   ];
 
   // Fotos antigas
